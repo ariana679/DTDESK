@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos - DTDESK</title>
+  <style>
+    .product-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .product-card {
+      border: 1px solid #ddd;
+      padding: 10px;
+      width: 200px;
+      text-align: center;
+    }
+    .product-card img {
+      max-width: 100%;
+      height: auto;
+    }
+    .product-card h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .product-card p {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>DTDESK - Productos</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="https://www.instagram.com/duki/">Contacto</a></li>
+        <li><a href="login.php">Iniciar Sesion</a></li>
+        <li><a href="registro.php">Registro</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="product-list" id="product-list"></section>
+  </main>
+
+  <script>
+    // Cargar productos desde el archivo JSON
+    fetch('productos.json')
+      .then(response => response.json())
+      .then(data => {
+        const productList = document.getElementById('product-list');
+        data.productos.forEach(producto => {
+          const productCard = document.createElement('div');
+          productCard.classList.add('product-card');
+
+          productCard.innerHTML = `
+            <img src="${producto.imagen}" alt="${producto.nombre}">
+            <h3>${producto.nombre}</h3>
+            <p>${producto.descripcion}</p>
+            <p><strong>$${producto.precio}</strong></p>
+          `;
+
+          productList.appendChild(productCard);
+        });
+      })
+      .catch(error => console.error('Error al cargar los productos:', error));
+  </script>
+</body>
+</html>
