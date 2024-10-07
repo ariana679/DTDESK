@@ -1,0 +1,26 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Escritorio Moderno",
+      "descripcion": "Un escritorio moderno y elegante para tu oficina.",
+      "precio": 777,
+      "imagen": "img/escritorio1.jpg"
+    },
+    {
+      "id": 2,
+      "nombre": "Silla de Oficina",
+      "descripcion": "Una silla cómoda y ergonómica.",
+      "precio": 50000,
+      "imagen": "img/silla1.jpg"
+    },
+    {
+      "id": 3,
+      "nombre": "Lámpara de Escritorio",
+      "descripcion": "Lámpara moderna con luz ajustable.",
+      "precio": 20000,
+      "imagen": "img/lampara1.jpg"
+    }
+  ]
+}
+
