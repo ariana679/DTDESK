@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escritorio Moderno - DTDESK</title>
     <link rel="stylesheet" href="css/des.css">
+    <?php
+include 'nav.php';
+?>
 </head>
 
 <body>
-<?php
-include 'nav.php';
-?>
+
     <main>
         <section class="product-description">
             <div class="image-container">
@@ -35,10 +36,6 @@ include 'nav.php';
             </div>
         </section>
     </main>
-
-    <footer>
-        <p>&copy; 2024 DTDESK. Todos los derechos reservados.</p>
-    </footer>
 
     <script>
     

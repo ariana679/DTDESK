@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $error_message = "Nombre de usuario o contraseña incorrectos.";
     }
 }
-include 'nav.php'
+include 'nav.php';
 ?>
 
 <!DOCTYPE html>
@@ -32,49 +32,17 @@ include 'nav.php'
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - DCDESK</title>
+    <title>Login - DTDESK</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        nav {
-            background-color: #444;
-            overflow: hidden;
-        }
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-        nav ul li {
-            float: left;
-        }
-        nav ul li a {
-            display: block;
-            color: #fff;
-            text-align: center;
-            padding: 14px 20px;
-            text-decoration: none;
-        }
-        nav ul li a:hover {
-            background-color: #555;
-        }
+       
+        
         .login-container {
             max-width: 400px;
             margin: 50px auto;
             padding: 20px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
+            border-radius: 10px; /* Bordes redondeados */
         }
         .login-container h2 {
             text-align: center;
@@ -92,26 +60,27 @@ include 'nav.php'
         .login-container input[type="submit"] {
             width: 100%;
             padding: 10px;
-            background-color: #5cb85c;
+            background-color: #1a1a1a; /* Fondo oscuro para el botón */
             border: none;
             border-radius: 5px;
             color: #fff;
             font-size: 16px;
             cursor: pointer;
+            transition: background-color 0.3s; /* Transición para el hover */
         }
         .login-container input[type="submit"]:hover {
-            background-color: #4cae4c;
+            background-color: #333; /* Color más claro en hover */
         }
         .error-message {
             color: red;
             text-align: center;
             margin-bottom: 10px;
         }
+
     </style>
 </head>
 <body>
 
-    </nav>
     <main>
         <div class="login-container">
             <h2>Iniciar Sesión</h2>
@@ -128,7 +97,7 @@ include 'nav.php'
         </div>
     </main>
     <footer>
-      <center>  <p>&copy; 2024 DTDESK. Todos los derechos reservados.</p></center>
+        <p>&copy; 2024 DTDESK. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>

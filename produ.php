@@ -3,133 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Productos - DTDESK</title>
-  <link rel="stylesheet" href="css/productos.css">
-  <style>
-    /* Estilo de productos y tarjetas */
-    .product-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: space-around;
-    }
-    .product-card {
-      border: 1px solid #ddd;
-      padding: 15px;
-      width: 250px;
-      text-align: center;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    }
-    .product-card img {
-      max-width: 100%;
-      height: auto;
-    }
-    .product-card h3 {
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-    .product-card p {
-      margin-bottom: 10px;
-    }
-    .product-card button {
-      background-color: #28a745;
-      color: white;
-      padding: 10px;
-      border: none;
-      cursor: pointer;
-    }
-    .product-card button:hover {
-      background-color: #218838;
-    }
-  </style>
-</head>
+  <title>Filtrado de Productos</title>
+  <link rel="stylesheet" href="css/filtro.css">
+  </head>
 <body>
-  <?php
-  include 'nav.php' 
- ?>
-  <main>
-    <section class="featured-products">
-      <h2>Productos Destacados</h2>
-      <div class="product-list">
-          <div class="product-card">
-              <a href="descripcion.php">
-              <img src="img/escritorio1.jpg" alt="Escritorio Moderno">
-              <h3>Escritorio Moderno</h3>
-              <p>$100.000</p>
-          </a>
-          </div>
-          <div class="product-card">
-              <img src="ruta/a/imagen2.jpg" alt="Producto 2">
-              <h3>Producto 2</h3>
-              <p>$200</p>
-              <button onclick="addToCart(2)">Añadir al Carrito</button>
-          </div>
-          <div class="product-card">
-              <img src="ruta/a/imagen3.jpg" alt="Producto 3">
-              <h3>Producto 3</h3>
-              <p>$300</p>
-              <button onclick="addToCart(3)">Añadir al Carrito</button>
-          </div>
-          <div class="product-card">
-              <img src="ruta/a/imagen4.jpg" alt="Producto 4">
-              <h3>Producto 4</h3>
-              <p>$400</p>
-              <button onclick="addToCart(4)">Añadir al Carrito</button>
-          </div>
-      </div>
-  </section>
+  <!-- Incluir el nav.php -->
+  <?php include 'nav.php'; ?>
 
-  </main>
+  <div class="container">
+    <h1>Productos Disponibles</h1>
 
-  <script>
-    // Función para agregar producto al carrito
-    function addToCart(producto) {
-      let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    <!-- Formulario de filtrado -->
+    <div class="filtros">
+      <h2>Filtrar por:</h2>
+      <form method="GET" action="produ.php">
+        <label for="precioMin">Precio mínimo:</label>
+        <input type="number" id="precioMin" name="precioMin" placeholder="0" min="0" value="<?php echo isset($_GET['precioMin']) ? $_GET['precioMin'] : ''; ?>">
+        
+        <label for="precioMax">Precio máximo:</label>
+        <input type="number" id="precioMax" name="precioMax" placeholder="100000" min="0" value="<?php echo isset($_GET['precioMax']) ? $_GET['precioMax'] : ''; ?>">
+        
+        <button type="submit">Filtrar</button>
+      </form>
+    </div>
 
-      // Verificar si el producto ya está en el carrito
-      const productoExistente = carrito.find(item => item.id === producto.id);
+    <!-- Grid de productos -->
+    <div class="produ-grid">
+      <?php
+      // Datos de los productos (esto usualmente vendría de una base de datos)
+      $productos = [
+        [
+          "id" => 1,
+          "nombre" => "Escritorio Moderno",
+          "descripcion" => "Un escritorio moderno y elegante para tu oficina.",
+          "precio" => 999999,
+          "imagen" => "img/escritorio1.jpg"
+        ],
+        [
+          "id" => 2,
+          "nombre" => "Silla de Oficina",
+          "descripcion" => "Una silla cómoda y ergonómica.",
+          "precio" => 150000,
+          "imagen" => "img/silla1.jpg"
+        ],
+        [
+          "id" => 3,
+          "nombre" => "Lámpara de Escritorio",
+          "descripcion" => "Lámpara moderna con luz ajustable.",
+          "precio" => 30000,
+          "imagen" => "img/lampara1.jpg"
+        ]
+      ];
 
-      if (productoExistente) {
-        // Si ya está, incrementar la cantidad
-        productoExistente.cantidad += 1;
+      // Obtener los filtros de precio mínimo y máximo
+      $precioMin = isset($_GET['precioMin']) ? (float)$_GET['precioMin'] : 0;
+      $precioMax = isset($_GET['precioMax']) ? (float)$_GET['precioMax'] : INF;
+
+      // Filtrar productos por precio
+      $productosFiltrados = array_filter($productos, function($producto) use ($precioMin, $precioMax) {
+        return $producto['precio'] >= $precioMin && $producto['precio'] <= $precioMax;
+      });
+
+      // Mostrar productos filtrados
+      if (count($productosFiltrados) > 0) {
+        foreach ($productosFiltrados as $producto) {
+          echo '<div class="producto">';
+          echo '<a href="detalle.php?id=' . $producto['id'] . '">';
+          echo '<img src="' . $producto['imagen'] . '" alt="' . $producto['nombre'] . '">';
+          echo '<h2>' . $producto['nombre'] . '</h2>';
+          echo '</a>';
+          echo '<p>' . $producto['descripcion'] . '</p>';
+          echo '<p>Precio: $' . number_format($producto['precio'], 2) . '</p>';
+          echo '</div>';
+        }
       } else {
-        // Si no está, agregarlo con cantidad 1
-        carrito.push({ ...producto, cantidad: 1 });
+        echo '<p>No se encontraron productos en el rango de precios seleccionado.</p>';
       }
+      ?>
+    </div>
+  </div>
 
-      // Guardar el carrito actualizado en localStorage
-      localStorage.setItem('carrito', JSON.stringify(carrito));
-      alert('Producto añadido al carrito.');
-    }
-
-    // Función para abrir la página de descripción
-    function openDescriptionPage(productId) {
-      window.location.href = `descripcion.php?id=${productId}`;
-    }
-
-    // Cargar productos desde el archivo JSON
-    fetch('productos.json')
-      .then(response => response.json())
-      .then(data => {
-        const productList = document.getElementById('product-list');
-        data.productos.forEach(producto => {
-          const productCard = document.createElement('div');
-          productCard.classList.add('product-card');
-
-          productCard.innerHTML = `
-            <a href="javascript:void(0)" onclick="openDescriptionPage(${producto.id})">
-              <img src="${producto.imagen}" alt="${producto.nombre}">
-              <h3>${producto.nombre}</h3>
-            </a>
-            <p>${producto.descripcion}</p>
-            <p><strong>$${producto.precio}</strong></p>
-            <button onclick="addToCart(${JSON.stringify(producto)})">Añadir al Carrito</button>
-          `;
-
-          productList.appendChild(productCard);
-        });
-      })
-      .catch(error => console.error('Error al cargar los productos:', error));
-  </script>
 </body>
 </html>
