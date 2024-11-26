@@ -1,0 +1,73 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Contenido principal */
+  main {
+    margin: 20px;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #343a40;
+  }
+  
+  /* Tabla de productos en el carrito */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  td {
+    background-color: white;
+  }
+  
+  /* Botón para eliminar productos */
+  button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  button:hover {
+    background-color: #c82333;
+  }
+  
+  /* Total del carrito */
+  .total {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: right;
+    margin: 20px;
+    color: #28a745;
+  }
+  
+  /* Responsividad */
+  @media (max-width: 600px) {
+    table, th, td {
+      font-size: 14px;
+    }
+  
+    button {
+      padding: 6px 8px;
+    }
+  }
+  

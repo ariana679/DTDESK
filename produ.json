@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "nombre": "Mueble de Recepción Moderno y Funcional",
+      "descripcion": "Elegante mueble de recepción ideal para oficinas, clínicas o locales comerciales. Fabricado con materiales de alta calidad, combina estilo moderno y funcionalidad. Incluye amplio espacio de almacenamiento, superficie para trabajo y atención al cliente, y diseño ergonómico que optimiza el espacio. Disponible en colores neutros para adaptarse a cualquier decoración. ¡Perfecto para causar una excelente primera impresión!",
+      "precio": 450.999,
+      "imagen": "img/recepcion.webp",
+      "categoria": "escritorio"
+    },
+    {
+      "id": 2,
+      "nombre": "Escritorio de Oficina Moderno y Versátil",
+      "descripcion": "Práctico y elegante escritorio diseñado para oficinas o espacios de trabajo en casa. Fabricado con materiales resistentes, ofrece una amplia superficie para ordenador, documentos y accesorios. Incluye compartimentos o cajones para organización eficiente. Su diseño ergonómico y líneas modernas se adaptan a cualquier estilo de decoración, maximizando la productividad y el confort. ¡El aliado perfecto para tu jornada laboral!",
+      "precio": 290.999,
+      "imagen": "img/escritorio.webp",
+      "categoria": "pantalones"
+    },
+    {
+      "id": 3,
+      "nombre": "Silla de Oficina Ergonómica con Ruedas",
+      "descripcion": "Diseñada para combinar confort y funcionalidad, esta silla de oficina ergonómica cuenta con respaldo acolchado que se adapta a la curvatura de tu espalda, asiento ajustable en altura y soporte lumbar para una postura saludable. Su base giratoria de 360° con ruedas suaves permite moverte fácilmente sin dañar el piso. Perfecta para largas jornadas de trabajo o estudio, ofreciendo estilo y comodidad en un solo producto. ¡Optimiza tu espacio de trabajo con esta silla versátil y moderna!",
+      "precio": 150.999,
+      "imagen": "img/silla.jfif",
+      "categoria": "remeras"
+    }
+  ]
+  

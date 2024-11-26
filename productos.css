@@ -1,0 +1,136 @@
+body {
+    font-family: 'Poppins', sans-serif; /* Tipografía coherente */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Color de fondo */
+}
+
+.featured-products {
+    text-align: center; /* Centrar el título */
+    margin: 20px; /* Margen */
+}
+
+.featured-products h2 {
+    margin-bottom: 20px; /* Margen inferior */
+    color: #333; /* Color del texto */
+}
+
+.product-list {
+    display: flex;
+    justify-content: center; /* Centrar productos */
+    flex-wrap: wrap; /* Permitir que se envuelvan */
+    gap: 20px; /* Espacio entre productos */
+}
+
+.product-card {
+    border: 1px solid #ccc; /* Borde del card */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 15px; /* Relleno */
+    width: 250px; /* Ancho de cada card */
+    text-align: center; /* Texto centrado */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: transform 0.3s; /* Transición para efecto hover */
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+}
+
+.product-card img {
+    max-width: 100%; /* Ancho máximo de la imagen */
+    height: auto; /* Altura automática */
+    border-bottom: 1px solid #ccc; /* Borde inferior de la imagen */
+    padding-bottom: 10px; /* Espacio inferior de la imagen */
+    margin-bottom: 10px; /* Margen inferior */
+}
+
+.product-card h3 {
+    margin: 10px 0; /* Margen superior e inferior */
+    color: #333; /* Color del texto */
+}
+
+.product-card p {
+    font-size: 18px; /* Tamaño del texto del precio */
+    color: #333; /* Color del texto */
+    margin-bottom: 10px; /* Margen inferior */
+}
+
+.product-card button {
+    background-color: #28a745; /* Color del botón */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Relleno */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor puntero */
+    transition: background-color 0.3s; /* Transición en hover */
+}
+
+.product-card button:hover {
+    background-color: #218838; /* Color más oscuro en hover */
+}
+
+
+.featured-products {
+    text-align: center; /* Centrar el título */
+    margin: 20px; /* Margen */
+}
+
+.featured-products h2 {
+    margin-bottom: 20px; /* Margen inferior */
+    color: #333; /* Color del texto */
+}
+
+.product-list {
+    display: flex;
+    justify-content: center; /* Centrar productos */
+    flex-wrap: wrap; /* Permitir que se envuelvan */
+    gap: 20px; /* Espacio entre productos */
+}
+
+.product-card {
+    border: 1px solid #ccc; /* Borde del card */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 15px; /* Relleno */
+    width: 250px; /* Ancho de cada card */
+    text-align: center; /* Texto centrado */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: transform 0.3s; /* Transición para efecto hover */
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+}
+
+.product-card img {
+    max-width: 100%; /* Ancho máximo de la imagen */
+    height: auto; /* Altura automática */
+    border-bottom: 1px solid #ccc; /* Borde inferior de la imagen */
+    padding-bottom: 10px; /* Espacio inferior de la imagen */
+    margin-bottom: 10px; /* Margen inferior */
+}
+
+.product-card h3 {
+    margin: 10px 0; /* Margen superior e inferior */
+    color: #333; /* Color del texto */
+}
+
+.product-card p {
+    font-size: 18px; /* Tamaño del texto del precio */
+    color: #333; /* Color del texto */
+    margin-bottom: 10px; /* Margen inferior */
+}
+
+.product-card button {
+    background-color: #28a745; /* Color del botón */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Relleno */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor puntero */
+    transition: background-color 0.3s; /* Transición en hover */
+}
+
+.product-card button:hover {
+    background-color: #218838; /* Color más oscuro en hover */
+}
+
